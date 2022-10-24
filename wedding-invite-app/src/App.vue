@@ -4,22 +4,21 @@ import HelloWorld from "./components/HelloWorld.vue";
 </script>
 
 <template>
-  <header>
+  <!-- <header> -->
    
 
-    <div class="wrapper">
-      <HelloWorld msg="Danielle & Elliott's Wedding" />
+      <!-- <HelloWorld msg="Danielle & Elliott's Wedding" />
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/venue">Venue</RouterLink>
         <RouterLink to="/contact">Contact</RouterLink>
         <RouterLink to="/invites">Invites</RouterLink>
-      </nav>
-    </div>
-  </header>
+      </nav> -->
+ 
+  <!-- </header>-->
 
-  <RouterView />
+  <RouterView /> 
 </template>
 
 <style scoped>
