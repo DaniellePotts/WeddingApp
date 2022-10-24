@@ -1,4 +1,16 @@
 [
-    "Danielle",
-    "Elliott"
+    {
+        "name":"Danielle Potts",
+        "partner":"Elliott Armstrong",
+        "attending":false,
+        "partnerAttending":false,
+        "hasChildren":true,
+        "totalAttending":0
+    },
+    {
+        "name":"Elliott Armstrong"
+    },
+    {
+        "name":"Carla Potts"
+    }
 ]
