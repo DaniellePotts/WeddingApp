@@ -5,13 +5,7 @@ import HelloWorld from "./components/HelloWorld.vue";
 
 <template>
   <header>
-    <img
-      alt="Vue logo"
-      class="logo"
-      src="@/assets/logo.svg"
-      width="125"
-      height="125"
-    />
+   
 
     <div class="wrapper">
       <HelloWorld msg="Danielle & Elliott's Wedding" />
@@ -20,6 +14,7 @@ import HelloWorld from "./components/HelloWorld.vue";
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/venue">Venue</RouterLink>
         <RouterLink to="/contact">Contact</RouterLink>
+        <RouterLink to="/invites">Invites</RouterLink>
       </nav>
     </div>
   </header>
