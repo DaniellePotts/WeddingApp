@@ -1,5 +1,12 @@
 @import "./base.css";
 
+.container {
+  border: 1px solid #DDDDDD;
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+
 #app {
   max-width: 1280px;
   margin: 0 auto;

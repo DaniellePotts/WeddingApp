@@ -1,87 +1,76 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from "vue-router";
-import HelloWorld from "./components/HelloWorld.vue";
+import { Slide } from 'vue3-burger-menu'
 </script>
 
 <template>
-  <header>
-   
+  <div class="container">
 
-    <div class="wrapper">
-      <HelloWorld msg="Danielle & Elliott's Wedding" />
+    <div class="row">
+      <div class="column">
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/venue">Venue</RouterLink>
-        <RouterLink to="/contact">Contact</RouterLink>
-        <RouterLink to="/invites">Invites</RouterLink>
-      </nav>
+        <img src="https://media-cldnry.s-nbcnews.com/image/upload/newscms/2019_45/2619891/181026_penguin_couple.jpg"
+          height="290px">
+      </div>
+      <div class="column">
+        <div class="invite-content">
+          <span class="text-content">Roker Hotel, Sunderland</span>
+          <span>Friday, September 8th 2023</span>
+          <button>RSVP</button>
+        </div>
+
+      </div>
     </div>
-  </header>
+  </div>
 
-  <RouterView />
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+.container {
+  border: 1px solid #DDDDDD;
+  width: 200px;
+  height: 200px;
+  position: relative;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.tag {
+  float: left;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background-color: green;
+  z-index: 1000;
 }
 
-nav {
-  width: 100%;
-  font-size: 12px;
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+  width: 50em
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+  flex: 50%;
+  padding: 10px;
+  height: 300px;
+  background-color: #F8F8F6
+}
+
+.invite-content {
   text-align: center;
-  margin-top: 2rem;
+  padding: 100px;
 }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
+.text-content {
+  padding: 5px
 }
 
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+.center {
+  margin: auto;
+  width: 60%;
+  padding: 10px;
 }
 </style>
