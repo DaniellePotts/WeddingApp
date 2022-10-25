@@ -1,86 +1,155 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from "vue-router";
-import HelloWorld from "./components/HelloWorld.vue";
+import { Slide } from 'vue3-burger-menu'
+
 </script>
 
 <template>
-  <!-- <header> -->
-   
+  <div class="flex-container">
+    <div class="flex-item-left">
+      <div class="invite-banner">
 
-      <!-- <HelloWorld msg="Danielle & Elliott's Wedding" />
+        <img class="img"
+          src="https://media-cldnry.s-nbcnews.com/image/upload/newscms/2019_45/2619891/181026_penguin_couple.jpg" />
+        <div class="top-left">
+          <Slide>
+           
+              <span>
+                <RouterLink to="/venue">Venue</RouterLink>
+              </span>
+              <span>
+                <RouterLink to="/invites">Invites</RouterLink>
+              </span>
+           
+          </Slide>
+        </div>
+      </div>
+    </div>
+    <div class="flex-item-right initial-info">
+      <div class="invite-banner">
+        <img class="img" src="./assets/flower-g7006753f2_1920.png" />
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/venue">Venue</RouterLink>
-        <RouterLink to="/contact">Contact</RouterLink>
-        <RouterLink to="/invites">Invites</RouterLink>
-      </nav> -->
- 
-  <!-- </header>-->
+        <div class="centered">
+          <p>Roker Hotel, Sunderland</p>
+          <p>Friday, September 8th 2023</p>
+          <button class="button button4">                <RouterLink to="/invites" class="rsvp-button">RSVP</RouterLink>
+</button>
+        </div>
 
-  <RouterView /> 
+      </div>
+    </div>
+  </div>
 </template>
 
+
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
 }
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.rsvp-button{
+  color:black
 }
-
-nav {
-  width: 100%;
-  font-size: 12px;
+.button {
+  background-color: #4CAF50;
+  /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
   text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
+  text-decoration: none;
   display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
 }
 
-nav a:first-of-type {
-  border: 0;
+.button4 {
+  background-color: white;
+  color: black;
+  border: 2px solid #e7e7e7;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+.button4:hover {
+  background-color: #e7e7e7;
+}
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+.invite-banner {
+  position: relative;
+  text-align: center;
+  color: black;
+}
 
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
+.initial-info {
+  color: black
+}
 
-    padding: 1rem 0;
-    margin-top: 1rem;
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+
+  /* this centers vertically */
+  align-items: center;
+
+  /* this centers horizontally */
+  text-align: center;
+
+  /* background colour for whole container */
+  background-color: #f8f8f6;
+}
+
+.img {
+  height: 100%;
+  width: 100%;
+}
+
+.flex-item-left {
+  flex: 65%;
+}
+
+.flex-item-right {
+  flex: 35%;
+}
+
+.tag {
+  float: left;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background-color: green;
+  z-index: 1000;
+}
+
+.button {
+  color: black;
+  border: 2px solid #555555;
+  padding: 10px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 20px 2px;
+  cursor: pointer;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media (max-width: 800px) {
+
+  .flex-item-right,
+  .flex-item-left {
+    flex: 100%;
   }
 }
 </style>
