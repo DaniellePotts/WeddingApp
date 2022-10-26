@@ -13,6 +13,31 @@ header{
 
 }
 
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+.content-image-hover {
+  position: relative;
+  text-align: center;
+  color: black;
+}
+
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 a,
 .green {
   text-decoration: none;

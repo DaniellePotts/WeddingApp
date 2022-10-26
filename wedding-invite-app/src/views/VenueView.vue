@@ -4,10 +4,11 @@ import { RouterLink, RouterView } from "vue-router";
 
 <template>
   <div class="venue">
+
     <ul>
 
       <li>
-        <RouterLink to="/home">Home</RouterLink>
+        <RouterLink to="/">Home</RouterLink>
       </li>
       <li>
         <RouterLink to="/venue">Venue</RouterLink>
