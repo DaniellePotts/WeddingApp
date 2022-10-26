@@ -1,55 +1,41 @@
 <script >
 import { RouterLink, RouterView } from "vue-router";
+import Navigation from '../components/Navigation.vue'
 
 export default
-{
-data() {
-  return {
-    name: 'Vue.js'
+  {
+    data() {
+      return {
+        name: 'Vue.js'
+      }
+    },
+    components:{
+      Navigation
+    }
   }
-},
-methods: {
-  greet() {
-    var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-  }
-}
-}
 
 
 </script>
 
 <template>
-   <div class="topnav" id="myTopnav">
-  <a href="#home" class="active">Home</a>
-  <a href="#news">News</a>
-  <a href="#contact">Contact</a>
-  <a href="#about">About</a>
-  <a href="javascript:void(0);" class="icon" @click="greet">
-    <i class="fa fa-bars"></i>
-  </a>
-</div>
+ <Navigation/>
   <div class="flex-container">
-  
+
     <div class="flex-item-left">
-      
+
       <div class="content-image-hover">
 
         <img class="img"
           src="https://media-cldnry.s-nbcnews.com/image/upload/newscms/2019_45/2619891/181026_penguin_couple.jpg" />
-        <div class="bottom-left">
+        <!-- <div class="bottom-left">
           <span>Danielle & Elliott's Wedding</span>
-        </div>
-        
+        </div> -->
+
       </div>
     </div>
     <div class="flex-item-right initial-info">
       <div class="content-image-hover">
-        <img class="img" src="../assets/flower-g7006753f2_1920.png" />
+        <img style="height: 520px; width: 100%;" class="img" src="../assets/flower-g7006753f2_1920.png" />
         <div class="centered">
           <p>Roker Hotel, Sunderland</p>
           <p>Friday, September 8th 2023</p>
@@ -64,7 +50,6 @@ methods: {
 
 
 <style scoped>
-
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -100,7 +85,10 @@ body {
 }
 
 @media screen and (max-width: 600px) {
-  .topnav a:not(:first-child) {display: none;}
+  .topnav a:not(:first-child) {
+    display: none;
+  }
+
   .topnav a.icon {
     float: right;
     display: block;
@@ -108,12 +96,16 @@ body {
 }
 
 @media screen and (max-width: 600px) {
-  .topnav.responsive {position: relative;}
+  .topnav.responsive {
+    position: relative;
+  }
+
   .topnav.responsive .icon {
     position: absolute;
     right: 0;
     top: 0;
   }
+
   .topnav.responsive a {
     float: none;
     display: block;
@@ -157,32 +149,13 @@ body {
   color: black
 }
 
-.flex-container {
-  display: flex;
-  flex-wrap: wrap;
 
-  /* this centers vertically */
-  align-items: center;
-
-  /* this centers horizontally */
-  text-align: center;
-
-  /* background colour for whole container */
-  background-color: #f8f8f6;
-}
 
 .img {
   height: 100%;
   width: 100%;
 }
 
-.flex-item-left {
-  flex: 65%;
-}
-
-.flex-item-right {
-  flex: 35%;
-}
 
 .tag {
   float: left;
@@ -209,11 +182,5 @@ body {
   box-sizing: border-box;
 }
 
-@media (max-width: 800px) {
 
-  .flex-item-right,
-  .flex-item-left {
-    flex: 100%;
-  }
-}
 </style>

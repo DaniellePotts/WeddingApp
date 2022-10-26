@@ -1,6 +1,8 @@
 
 <script>
 import names from '../data/names.json'
+import Navigation from '../components/Navigation.vue'
+
 export default
     {
         data() {
@@ -18,13 +20,17 @@ export default
                 showSubmit: false,
                 childrenAttending: 0,
                 totalChildren: 0,
-                displayChildError: false
+                displayChildError: false,
+                displayForm: true
             }
         },
-        methods:{
-            greet: function (){
+        methods: {
+            greet: function () {
                 alert('TEST!')
             }
+        },
+        components: {
+            Navigation
         },
         watch: {
             name: function (value) {
@@ -69,9 +75,10 @@ export default
 
     }
 
-    </script>
+</script>
 <style>
 input[type=text],
+input[type=number],
 select {
     width: 100%;
     padding: 12px 20px;
@@ -132,29 +139,48 @@ li a:hover:not(.active) {
 }
 </style>
 <template>
-
-
-
-    <div>
-        
-        
-        <input v-if="this.showSearch" type="text" id="fname" v-model="name" name="firstname" placeholder="Your name..">
-        <select  v-if="found.length > 0" v-model="selected">
+        <Navigation />
+        <div class="flex-container">
+            <div clas="main-form" v-if="this.displayForm">
+                <input v-if="this.showSearch" type="text" id="fname" v-model="name" name="firstname"
+                    placeholder="Your name..">
+                <select v-if="found.length > 0" v-model="selected">
                     <option>Select...</option>
                     <option id="attendeeName" v-for="item in found" v-bind:value="item">{{ item.name }}</option>
                 </select>
-        <label for="lname">Last Name</label>
-        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                <div v-if="selectedPerson != null">
+                    <div v-if="this.showSearch">
+                        <label for="attendingYes">Yes</label>
+                        <input id="attendingYes" type="radio" name="attending" class="pure-button"
+                            @click="this.attending = true" />
+                        <label for="attendingNo">No</label>
 
-        <label for="country">Country</label>
-        <select id="country" name="country">
-            <option value="australia">Australia</option>
-            <option value="canada">Canada</option>
-            <option value="usa">USA</option>
-        </select>
+                        <input id="attendingNo" type="radio" name="attending" class="pure-button"
+                            @click="this.attending = false" />
+                    </div>
+                    <div v-if="this.showPartner">
+                        <span>Will a friend/partner be attending?</span>
+                        <div>
+                            <button class="pure-button" @click="this.partnerAttending = true">Yes</button><button
+                                class="pure-button" @click="this.partnerAttending = false">No</button>
+                        </div>
+                    </div>
+                    <div v-if="selectedPerson.hasChildren && this.showChildren">
+                        <span>How many children will be attending?</span>
+                        <div>
+                            <input type="number" placeholder="0" min=0 v-model="totalChildren" />
+                        </div>
+                        <button class="pure-button" v-if="selectedPerson != null"
+                            @click="this.childrenAttending = this.totalChildren">Submit</button>
 
-        <input type="submit" value="Submit">
-    </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <h1 v-if="this.showSubmit">Thank you for your response</h1>
+        </div>
+
 
 
 </template>
