@@ -11,8 +11,62 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-
+ 
   font-weight: normal;
+  background-image: url("C:\\Users\\danielle.potts\\Documents\\personal projects\\WeddingApp\wedding-invite-app\\src\\assets\\evie-s-bSVGnUCk4tk-unsplash (1).jpg");
+}
+
+header{
+  background-color: #f8f8f6;
+
+}
+
+.flex-item-left {
+  flex: 65%;
+}
+
+.flex-item-right {
+  flex: 35%;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+
+  /* this centers vertically */
+  align-items: center;
+
+  /* this centers horizontally */
+  text-align: center;
+
+  /* background colour for whole container */
+  background-color: #f8f8f6;
+}
+
+
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+.content-image-hover {
+  position: relative;
+  text-align: center;
+  color: black;
+}
+
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 a,
@@ -24,7 +78,16 @@ a,
 
 @media (hover: hover) {
   a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
+    background-color: #f8f8f6;
+    ;
+  }
+}
+
+@media (max-width: 800px) {
+
+  .flex-item-right,
+  .flex-item-left {
+    flex: 100%;
   }
 }
 
@@ -35,8 +98,8 @@ a,
   }
 
   #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
+    display: block;
+    /* grid-template-columns: 1fr 1fr;
+    padding: 0 2rem; */
   }
 }
